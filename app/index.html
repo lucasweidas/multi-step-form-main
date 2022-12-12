@@ -9,10 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="./js/main.js" type="module"></script>
   </head>
   <body>
     <main>
+      <h1 class="sr-only">Fill out the form below</h1>
       <div class="card">
         <div class="sidebar">
           <ol class="sidebar__list">
@@ -77,7 +85,7 @@
                 <div class="field" data-js="plan-container" data-plan-id="0">
                   <input type="radio" class="field__input invisible" name="plan" id="arcade" data-js="input-plan" checked />
                   <label class="field__container" for="arcade">
-                    <div class="icon">
+                    <span class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                         <g fill="none" fill-rule="evenodd">
                           <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
@@ -88,17 +96,17 @@
                           />
                         </g>
                       </svg>
-                    </div>
-                    <div class="plan__content flex-column" data-js="plan-content">
+                    </span>
+                    <span class="plan__content flex-column" data-js="plan-content">
                       <h3 class="headline-3">Arcade</h3>
                       <p class="text text--sm" data-js="plan-price">$9/mo</p>
-                    </div>
+                    </span>
                   </label>
                 </div>
                 <div class="field" data-js="plan-container" data-plan-id="1">
                   <input type="radio" class="field__input invisible" name="plan" id="advanced" data-js="input-plan" />
                   <label class="field__container" for="advanced">
-                    <div class="icon">
+                    <span class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                         <g fill="none" fill-rule="evenodd">
                           <circle cx="20" cy="20" r="20" fill="#F9818E" />
@@ -109,17 +117,17 @@
                           />
                         </g>
                       </svg>
-                    </div>
-                    <div class="plan__content flex-column" data-js="plan-content">
+                    </span>
+                    <span class="plan__content flex-column" data-js="plan-content">
                       <h3 class="headline-3">Advanced</h3>
                       <p class="text text--sm" data-js="plan-price">$12/mo</p>
-                    </div>
+                    </span>
                   </label>
                 </div>
                 <div class="field" data-js="plan-container" data-plan-id="2">
                   <input type="radio" class="field__input invisible" name="plan" id="pro" data-js="input-plan" />
                   <label class="field__container" for="pro">
-                    <div class="icon">
+                    <span class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                         <g fill="none" fill-rule="evenodd">
                           <circle cx="20" cy="20" r="20" fill="#483EFF" />
@@ -130,11 +138,11 @@
                           />
                         </g>
                       </svg>
-                    </div>
-                    <div class="plan__content flex-column" data-js="plan-content">
+                    </span>
+                    <span class="plan__content flex-column" data-js="plan-content">
                       <h3 class="headline-3">Pro</h3>
                       <p class="text text--sm" data-js="plan-price">$15/mo</p>
-                    </div>
+                    </span>
                   </label>
                 </div>
               </div>
@@ -143,7 +151,7 @@
                 <p class="text text--sm text--700 text--dark" data-js="option-monthly" id="option-monthly">Monthly</p>
                 <div class="toggle">
                   <input type="checkbox" class="toggle__input invisible" id="option" data-js="input-option" />
-                  <label for="option" class="toggle__custom" data-js="option-label" aria-labelledby="label-monthly"></label>
+                  <label for="option" class="toggle__custom" data-js="option-label" aria-labelledby="option-monthly"></label>
                 </div>
                 <p class="text text--sm text--700" data-js="option-yearly" id="option-yearly">Yearly</p>
               </div>
@@ -157,45 +165,45 @@
                   <input type="checkbox" class="field__input invisible" id="online-service" data-js="input-add-on" />
                   <label class="field__container align-center" for="online-service">
                     <span class="add-on__checkbox"></span>
-                    <div class="add-on__content space-between">
-                      <div class="add-on__wrapper flex-column">
+                    <span class="add-on__content space-between">
+                      <span class="add-on__wrapper flex-column">
                         <h3 class="headline-3">Online service</h3>
                         <p class="text text--xsm">Access to multiplayer games</p>
-                      </div>
-                      <div class="add-on__wrapper">
+                      </span>
+                      <span class="add-on__wrapper">
                         <p class="text text--xsm text--purple" data-js="add-on-price">+$1/mo</p>
-                      </div>
-                    </div>
+                      </span>
+                    </span>
                   </label>
                 </div>
                 <div class="field" data-js="add-on-container" data-add-on-id="1">
                   <input type="checkbox" class="field__input invisible" id="larger-storage" data-js="input-add-on" />
                   <label class="field__container align-center" for="larger-storage">
                     <span class="add-on__checkbox"></span>
-                    <div class="add-on__content space-between">
-                      <div class="add-on__wrapper flex-column">
+                    <span class="add-on__content space-between">
+                      <span class="add-on__wrapper flex-column">
                         <h3 class="headline-3">Larger storage</h3>
                         <p class="text text--xsm">Extra 1TB of cloud save</p>
-                      </div>
-                      <div class="add-on__wrapper">
+                      </span>
+                      <span class="add-on__wrapper">
                         <p class="text text--xsm text--purple" data-js="add-on-price">+$2/mo</p>
-                      </div>
-                    </div>
+                      </span>
+                    </span>
                   </label>
                 </div>
                 <div class="field" data-js="add-on-container" data-add-on-id="2">
                   <input type="checkbox" class="field__input invisible" id="customizable-profile" data-js="input-add-on" />
                   <label class="field__container align-center" for="customizable-profile">
                     <span class="add-on__checkbox"></span>
-                    <div class="add-on__content space-between">
-                      <div class="add-on__wrapper flex-column">
+                    <span class="add-on__content space-between">
+                      <span class="add-on__wrapper flex-column">
                         <h3 class="headline-3">Customizable profile</h3>
                         <p class="text text--xsm">Custom theme on your profile</p>
-                      </div>
-                      <div class="add-on__wrapper">
+                      </span>
+                      <span class="add-on__wrapper">
                         <p class="text text--xsm text--purple" data-js="add-on-price">+$2/mo</p>
-                      </div>
-                    </div>
+                      </span>
+                    </span>
                   </label>
                 </div>
               </div>
