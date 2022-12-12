@@ -1,0 +1,86 @@
+@use '../abstracts/' as *;
+
+.sidebar {
+  padding: rem(32) rem(16) 0;
+
+  @include breakpoint(large) {
+    min-height: rem(568);
+    padding: rem(40) rem(32);
+    background: url('../assets/images/bg-sidebar-desktop.svg') top center / cover no-repeat;
+    border-radius: rem(10);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(16);
+
+    @include breakpoint(large) {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: rem(32);
+    }
+
+    .item {
+      counter-increment: item-counter;
+
+      @include breakpoint(large) {
+        display: flex;
+        column-gap: rem(16);
+        align-items: center;
+      }
+
+      &::before {
+        --counter-size: #{rem(34)};
+        content: counter(item-counter);
+        width: var(--counter-size);
+        height: var(--counter-size);
+        display: grid;
+        place-items: center;
+        font-size: var(--font-size-3);
+        font-weight: 700;
+        color: var(--color-alabaster);
+        border: rem(1) solid currentColor;
+        border-radius: 50%;
+        transition-property: background-color, color, border-color;
+        transition: calc(var(--step-duration) / 2) ease-in;
+
+        @include breakpoint(medium) {
+          @include breakpoint-down(large) {
+            --counter-size: #{rem(40)};
+          }
+        }
+      }
+
+      &.active::before {
+        background-color: var(--color-light-blue);
+        color: var(--color-marine-blue);
+        border-color: var(--color-light-blue);
+      }
+
+      &__content {
+        row-gap: rem(4);
+
+        @include breakpoint-down(large) {
+          display: none;
+        }
+      }
+
+      &__headline {
+        font-size: rem(13);
+        font-weight: 400;
+        color: var(--color-light-gray);
+        text-transform: uppercase;
+      }
+
+      &__sub-headline {
+        font-size: rem(15);
+        font-weight: 500;
+        color: var(--color-white);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+}

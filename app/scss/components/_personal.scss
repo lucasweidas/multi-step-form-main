@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+.personal {
+  &__input {
+    width: 100%;
+    padding: rem(10) rem(16);
+    font-weight: 500;
+    color: var(--color-marine-blue);
+    border: rem(1) solid var(--color-light-gray);
+    border-radius: rem(4);
+
+    @include breakpoint(medium) {
+      padding-block: rem(14);
+      border-radius: rem(8);
+      margin-block-start: rem(2);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-purplish-blue);
+    }
+
+    &::placeholder {
+      font-weight: inherit;
+      color: var(--color-cool-gray);
+    }
+
+    &.error {
+      border-color: var(--color-strawberry-red);
+    }
+  }
+}

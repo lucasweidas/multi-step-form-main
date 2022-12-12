@@ -1,0 +1,40 @@
+@use 'breakpoints' as *;
+@use 'functions' as *;
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media screen and (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+@mixin on-hover-focus($property) {
+  transition: $property var(--duration-1) ease;
+
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin card {
+  --card-max-width: #{rem(500)};
+  --card-shadow-color: rgb(0, 0, 0, 0.09);
+  width: min(100% - rem(16) * 2, var(--card-max-width));
+  padding: rem(32) rem(24);
+  background-color: var(--color-white);
+  border-radius: rem(10);
+  box-shadow: rem(0) rem(5) rem(20) var(--card-shadow-color);
+
+  @include breakpoint(large) {
+    --card-max-width: #{rem(940)};
+    --card-shadow-color: rgb(0, 0, 0, 0.05);
+    padding: rem(16);
+    border-radius: rem(16);
+  }
+}

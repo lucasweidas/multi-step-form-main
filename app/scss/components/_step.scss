@@ -1,0 +1,118 @@
+@use '../abstracts/' as *;
+
+.step {
+  width: 100%;
+
+  @include breakpoint-down(large) {
+    @include card;
+    flex-shrink: 0;
+  }
+
+  &.slide-out {
+    position: absolute;
+    top: var(--steps-padding-block);
+    animation: slide-out var(--step-duration) ease-in-out forwards;
+
+    @keyframes slide-out {
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &.slide-in {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in var(--step-duration) ease-in-out var(--step-delay) forwards;
+
+    @keyframes slide-in {
+      100% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &.scale-down {
+    position: absolute;
+    top: var(--steps-padding-block);
+    animation: scale-down var(--step-duration) ease-in-out forwards;
+
+    @keyframes scale-down {
+      100% {
+        opacity: 0;
+        transform: scale(0.75);
+      }
+    }
+  }
+
+  &.scale-up {
+    opacity: 0;
+    transform: scale(0.75);
+    animation: scale-up var(--step-duration) ease-in-out var(--step-delay) forwards;
+
+    @keyframes scale-up {
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__fields {
+    row-gap: rem(16);
+    margin-block-start: rem(20);
+
+    @include breakpoint(large) {
+      margin-block-start: rem(32);
+
+      .personal & {
+        row-gap: rem(24);
+      }
+
+      .plan & {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: rem(18);
+      }
+    }
+  }
+}
+
+.field {
+  position: relative;
+
+  &__container {
+    display: flex;
+    column-gap: rem(14);
+    padding: rem(14);
+    border: rem(1) solid var(--color-light-gray);
+    border-radius: rem(8);
+    cursor: pointer;
+    transition-property: border-color, background-color;
+    transition: var(--duration-2) ease;
+
+    @include breakpoint(large) {
+      .plan & {
+        flex-direction: column;
+        row-gap: rem(48);
+      }
+
+      .add-on & {
+        column-gap: rem(22);
+        padding: rem(20) rem(22);
+      }
+    }
+  }
+
+  &__input:focus-visible + &__container,
+  &__container:hover {
+    border-color: var(--color-purplish-blue);
+  }
+
+  &__input:checked + &__container {
+    background-color: hsl(228, 100%, 84%, 0.1);
+    border-color: var(--color-purplish-blue);
+  }
+}

@@ -1,0 +1,59 @@
+@use '../abstracts/' as *;
+
+:root {
+  --duration-1: 150ms;
+  --duration-2: 200ms;
+  --step-duration: 500ms;
+  --step-delay: 100ms;
+}
+
+body {
+  background-color: var(--color-magnolia);
+
+  @include breakpoint-down(large) {
+    &::before {
+      content: '';
+      width: 100%;
+      height: rem(172);
+      position: absolute;
+      background: url('../assets/images/bg-sidebar-mobile.svg') center / cover no-repeat;
+      z-index: -1;
+
+      @include breakpoint-down(small) {
+        background-size: auto;
+      }
+    }
+  }
+}
+
+main {
+  @include breakpoint(large) {
+    padding-block: rem(104);
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  column-gap: rem(10);
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  width: 0px;
+  position: absolute;
+  opacity: hidden;
+}

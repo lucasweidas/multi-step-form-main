@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.confirmation {
+  padding-block: rem(80);
+
+  .icon {
+    --icon-size: #{rem(56)};
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-block-end: rem(24);
+
+    @include breakpoint(large) {
+      --icon-size: #{rem(80)};
+      margin-block-end: rem(34);
+    }
+  }
+
+  .headline-2 {
+    @include breakpoint(large) {
+      margin-block-end: rem(16);
+    }
+  }
+}

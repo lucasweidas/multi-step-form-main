@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+.card {
+  min-height: 100vh;
+  display: grid;
+  grid-auto-rows: auto 1fr;
+
+  @include breakpoint(large) {
+    @include card;
+    min-height: auto;
+    grid-template-columns: rem(274) auto;
+    margin-inline: auto;
+  }
+}

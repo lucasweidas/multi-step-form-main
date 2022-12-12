@@ -1,0 +1,23 @@
+{
+  "0": {
+    "name": "Online service",
+    "price": {
+      "monthly": 1,
+      "yearly": 10
+    }
+  },
+  "1": {
+    "name": "Larger storage",
+    "price": {
+      "monthly": 2,
+      "yearly": 20
+    }
+  },
+  "2": {
+    "name": "Customizable profile",
+    "price": {
+      "monthly": 2,
+      "yearly": 20
+    }
+  }
+}

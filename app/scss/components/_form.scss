@@ -1,0 +1,37 @@
+@use '../abstracts/' as *;
+
+.form {
+  justify-content: space-between;
+
+  @include breakpoint(large) {
+    width: 100%;
+    padding: rem(42) rem(84) rem(16) rem(100);
+  }
+
+  &__steps {
+    --steps-padding-block: #{rem(34) rem(24)};
+    --steps-height: auto;
+    width: 100%;
+    min-height: var(--steps-height);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    padding-block: var(--steps-padding-block);
+    margin-inline: auto;
+
+    @include breakpoint(large) {
+      --steps-padding-block: 0;
+    }
+  }
+
+  &__control {
+    align-items: center;
+    background-color: var(--color-white);
+
+    @include breakpoint-down(large) {
+      padding: rem(16);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use '../abstracts/' as *;
+
+.add-on {
+  &__checkbox {
+    --checkbox-size: #{rem(20)};
+    --checkbox-border-width: #{rem(1)};
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    flex-shrink: 0;
+    appearance: none;
+    position: relative;
+    background-color: transparent;
+    border: var(--checkbox-border-width) solid var(--color-light-gray);
+    border-radius: rem(4);
+    cursor: pointer;
+
+    &::before {
+      content: url('../assets/images/icon-checkmark.svg');
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      inset: calc(var(--checkbox-border-width) * -1);
+      opacity: 0;
+      padding: rem(1) rem(4) 0;
+      background-color: var(--color-purplish-blue);
+      border-radius: inherit;
+      transition: opacity var(--duration-2) ease;
+    }
+  }
+  .field__input:checked ~ .field__container &__checkbox::before {
+    opacity: 1;
+  }
+
+  &__content {
+    flex: 1;
+    align-items: center;
+    gap: rem(8);
+
+    @include breakpoint-down(xsmall) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__wrapper {
+    row-gap: rem(2);
+  }
+}
