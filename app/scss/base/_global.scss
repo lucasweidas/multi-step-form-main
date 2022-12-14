@@ -55,5 +55,6 @@ main {
 .invisible {
   width: 0px;
   position: absolute;
-  opacity: hidden;
+  opacity: 0;
+  appearance: none;
 }
